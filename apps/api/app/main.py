@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import auth, interviews
+from app.api import auth, interviews, ranking, report, resume, scoring
 from app.db.base import Base, engine
 from app.models import *  # noqa: F401,F403  (register models on Base)
 
@@ -28,6 +28,10 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(interviews.router)
+app.include_router(scoring.router)
+app.include_router(report.router)
+app.include_router(resume.router)
+app.include_router(ranking.router)
 
 
 @app.get("/health")
