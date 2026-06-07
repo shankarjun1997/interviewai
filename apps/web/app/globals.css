@@ -5,6 +5,23 @@
 :root {
   color-scheme: dark;
 }
+
 body {
   @apply bg-neutral-950 text-neutral-100 antialiased;
+  background-image:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(16, 185, 129, 0.06), transparent 60%),
+    radial-gradient(50rem 50rem at -10% 10%, rgba(59, 130, 246, 0.05), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Custom scrollbar to match the dark theme. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-neutral-700;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-600;
 }
